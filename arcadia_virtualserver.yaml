@@ -1,0 +1,38 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+ name: arcadia
+spec:
+ host: $nginx_ingress
+ upstreams:
+   - name: arcadia-users
+     service: arcadia-users
+     port: 80
+   - name: arcadia-login
+     service: arcadia-login
+     port: 80
+   - name: arcadia-stocks
+     service: arcadia-stocks
+     port: 80
+   - name: arcadia-stock-transaction
+     service: arcadia-stock-transaction
+     port: 80
+   - name: arcadia-frontend
+     service: arcadia-frontend
+     port: 80
+ routes:
+   - path: /v1/user
+     action:
+       pass: arcadia-users
+   - path: /v1/login
+     action:
+       pass: arcadia-login
+   - path: /v1/stock
+     action:
+       pass: arcadia-stocks
+   - path: /v1/stockt
+     action:
+       pass: arcadia-stock-transaction
+   - path: /
+     action:
+       pass: arcadia-frontend

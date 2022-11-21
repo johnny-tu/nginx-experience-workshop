@@ -1,0 +1,212 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arcadia-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arcadia-db
+  template:
+    metadata:
+      labels:
+        app: arcadia-db
+    spec:
+      #config.nsm.nginx.com/ignore-incoming-ports: "27017" # This is used by NSM to not proxy the DB connection
+      containers:
+        - name: arcadia-db
+          image: sorinboiaf5/arcadia-db:v0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 27017
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: arcadia-db
+spec:
+  ports:
+    - port: 27017
+      targetPort: 27017
+      protocol: TCP
+      name: mongo
+  selector:
+    app: arcadia-db
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arcadia-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arcadia-frontend
+  template:
+    metadata:
+      labels:
+        app: arcadia-frontend
+    spec:
+      containers:
+        - name: arcadia-frontend
+          image: sorinboiaf5/arcadia-frontend:v0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: arcadia-frontend
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+  selector:
+    app: arcadia-frontend
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arcadia-login
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arcadia-login
+  template:
+    metadata:
+      labels:
+        app: arcadia-login
+    spec:
+      containers:
+        - name: arcadia-login
+          image: sorinboiaf5/arcadia-login:v0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: arcadia-login
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+  selector:
+    app: arcadia-login
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arcadia-stock-transaction
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arcadia-stock-transaction
+  template:
+    metadata:
+      labels:
+        app: arcadia-stock-transaction
+    spec:
+      containers:
+        - name: arcadia-stock-transaction
+          image: sorinboiaf5/arcadia-stock_transaction:v0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: arcadia-stock-transaction
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+  selector:
+    app: arcadia-stock-transaction
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arcadia-stocks
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arcadia-stocks
+  template:
+    metadata:
+      labels:
+        app: arcadia-stocks
+    spec:
+      containers:
+        - name: arcadia-stocks
+          image: sorinboiaf5/arcadia-stocks:v0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: arcadia-stocks
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+  selector:
+    app: arcadia-stocks
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arcadia-users
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arcadia-users
+  template:
+    metadata:
+      labels:
+        app: arcadia-users
+    spec:
+      containers:
+        - name: arcadia-users
+          image: sorinboiaf5/arcadia-users:v0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: arcadia-users
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+  selector:
+    app: arcadia-users
