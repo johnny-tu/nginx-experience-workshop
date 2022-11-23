@@ -670,7 +670,7 @@ Repeat Step 9. You should now be able to hit nginx.local:9000
 
 `sudo vim /etc/nginx/nginx.conf`
 
-Add the following directive at the top of the configuration auth_jwt_key_file
+Add the following directive at the top of the configuration file
 
 `load_module modules/ngx_http_app_protect_module.so;`
 
