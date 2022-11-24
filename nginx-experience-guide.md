@@ -267,7 +267,7 @@ Add the following lines into the server {} block
 ```
 ssl_certificate /etc/nginx/ssl/www.example.com.crt;
 ssl_certificate_key /etc/nginx/ssl/www.example.com.key;
-ssl_protocols TLSv1.3 TLSv1.2 TLSv1.1;
+ssl_protocols TLSv1.3 TLSv1.2;
 ssl_prefer_server_ciphers on;
 ```
 
