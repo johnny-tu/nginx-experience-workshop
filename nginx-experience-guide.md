@@ -324,7 +324,7 @@ Create the file api_secret.jwk with the JSON Web Key to be used for signing.
 
 **Step 3**
 
-`sudo vim /etc/nginx/api_gateway.conf`
+`sudo vim /etc/nginx/conf.d/api_gateway.conf`
 
 Add the following directives to the server block in the api_gateway.conf file
 
