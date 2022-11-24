@@ -171,7 +171,7 @@ Edit the /etc/nginx/conf.d/lb.conf file and add the server 127.0.0.1:9003
 
 ![](api_lab_screen.png)
 
-`cd /opt/NJS-ErgastF1API`
+`cd ~/NJS-ErgastF1API`
 
 Start the API Docker containers
 
