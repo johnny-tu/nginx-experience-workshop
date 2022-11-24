@@ -426,7 +426,7 @@ For example the variable `$jwt_claim_freeuser` would return the value of the `fr
 
 ![](nginx_lab_screen.PNG)
 
-`sudo vim /etc/nginx/api_gateway.conf`
+`sudo vim /etc/nginx/conf.d/api_gateway.conf`
 
 Modify your `api_gateway.conf` file and add the `if` block as shown below:
 
