@@ -633,7 +633,7 @@ Check the key value Store. You should see the IP address you just added, with a 
 
 ```
 curl -X GET http://localhost:8080/api/7/http/keyvals/allowlist_zone
-{"172.31.1.45":"0"}
+{"172.31.1.45":"1"}
 ```
 
 **Step 8**
