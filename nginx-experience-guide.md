@@ -466,7 +466,7 @@ Why did we get this result?
 
 **Step 1**
 
-`sudo vim /etc/nginx/conf.d`
+`sudo vim /etc/nginx/conf.d/api_gateway.conf`
 
 
 **Step 2**
