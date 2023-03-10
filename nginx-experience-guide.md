@@ -169,7 +169,7 @@ Edit the /etc/nginx/conf.d/lb.conf file and add the server 127.0.0.1:9003
 
 **Enabling the API**
 
-![](api_lab_screen.png)
+![](api_lab_screen.PNG)
 
 `cd ~/NJS-ErgastF1API`
 
