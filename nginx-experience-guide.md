@@ -64,7 +64,7 @@ server {
 
 `curl localhost:9003`
 
-![](ubuntu_lab_screen.png)
+![](ubuntu_lab_screen.PNG)
 
 Open Firefox browser and visit the following URLs
 * nginx.local:9001
@@ -238,7 +238,7 @@ server {
 
 **Sending API Requests from Postman**
 
-![](ubuntu_lab_screen.png)
+![](ubuntu_lab_screen.PNG)
 
 Open Postman and use it to send the following API requests. Observe the response bodies
 
@@ -279,7 +279,7 @@ Save the config and reload nginx
 
 `sudo nginx -s reload`
 
-![](ubuntu_lab_screen.png)
+![](ubuntu_lab_screen.PNG)
 
 Open Postman and use it to send the following API requests. Observe the response bodies
 
@@ -384,7 +384,7 @@ Also, make sure to tick the **secret base64 encoded** checkbox.
 
 **Step 5**
 
-![](ubuntu_lab_screen.png)
+![](ubuntu_lab_screen.PNG)
 
 Open Postman and send the following API requests
 
@@ -447,13 +447,13 @@ location /api/f1/seasons {
 
 **Step 3**
 
-![](ubuntu_lab_screen.png)
+![](ubuntu_lab_screen.PNG)
 
 Use Postman to send a request to https://nginx.local:9443/api/f1/seasons
 
 Remember to configure the Bearer Token and specify your JWT Token.
 
-What is the result you  get?
+What is the result you get?
 
 Why did we get this result?
 
@@ -544,7 +544,7 @@ Run `curl -i localhost:9000` twice.
 
 **Step 6**
 
-![](ubuntu_lab_screen.png)
+![](ubuntu_lab_screen.PNG)
 
 Open the browser and go to the NGINX+ Dashboard page at `http://nginx.local:8080`.
 
@@ -577,7 +577,7 @@ server {
 
 `sudo nginx -s reload`
 
-![](ubuntu_lab_screen.png)
+![](ubuntu_lab_screen.PNG)
 
 Open the NGINX+ Dashboard and check your **HTTP Upstreams** tab. You should see the health checks count against the upstream servers of the **backend_servers** upstream
 
@@ -644,7 +644,7 @@ Notice how this is allowed.
 
 **Step 9**
 
-![](ubuntu_lab_screen.png)
+![](ubuntu_lab_screen.PNG)
 
 Open the browser and hit the URL `nginx.local:9000`
 
@@ -730,7 +730,7 @@ Examine the security log
 
 ## Module 7 - Intro to Kubernetes
 
-![](ubuntu_lab_screen.png)
+![](ubuntu_lab_screen.PNG)
 
 ### Start your Kubernetes cluster
 
