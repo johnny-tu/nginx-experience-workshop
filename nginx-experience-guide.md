@@ -960,7 +960,7 @@ Previously, we deployed two simple NodeJS apps and exposed them through a NodePo
 
 `cd ~/nginx-demo-apps`
 
-`cat application-virtualServer.yaml`
+`cat application-virtualserver.yaml`
 
 ```
 orasilabs@ip-172-31-8-165:~/nginx-demo-apps$ cat application-virtualserver.yaml
